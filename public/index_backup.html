@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holistic London — Find Your Scent Identity</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #FAFAF8; color: #1A1A1A; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .container { max-width: 560px; width: 100%; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #AAAAAA; margin-bottom: 32px; }
+  .progress { height: 1px; background: #E8E6E1; margin-bottom: 40px; }
+  .progress-fill { height: 1px; background: #1A1A1A; transition: width 0.5s ease; }
+  .screen { display: none; }
+  .screen.active { display: block; }
+  .q-num { font-size: 11px; color: #AAAAAA; margin-bottom: 12px; }
+  .q-text { font-size: 22px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
+  .q-sub { font-size: 14px; color: #888; margin-bottom: 32px; line-height: 1.5; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt { background: #FFF; border: 1px solid #E8E6E1; border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: all 0.15s; text-align: left; width: 100%; }
+  .opt:hover { border-color: #AAAAAA; }
+  .opt.selected { border-color: #1A1A1A; border-width: 1.5px; background: #F5F4F1; }
+  .opt-title { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+  .opt-sub { font-size: 13px; color: #888; line-height: 1.4; }
+  .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+  .btn-back { font-size: 13px; color: #AAAAAA; background: none; border: none; cursor: pointer; padding: 0; }
+  .btn-next { font-size: 14px; font-weight: 500; padding: 12px 28px; background: #1A1A1A; color: #FFF; border: none; border-radius: 8px; cursor: pointer; opacity: 0.3; transition: opacity 0.2s; }
+  .btn-next.enabled { opacity: 1; }
+  .intro-title { font-size: 32px; font-weight: 500; line-height: 1.3; margin-bottom: 16px; }
+  .intro-sub { font-size: 16px; color: #666; line-height: 1.65; margin-bottom: 40px; }
+  .intro-meta { display: flex; gap: 24px; margin-bottom: 40px; }
+  .intro-meta span { font-size: 13px; color: #AAAAAA; }
+  .btn-start { font-size: 15px; font-weight: 500; padding: 14px 36px; background: #1A1A1A; color: #FFF; border: none; border-radius: 8px; cursor: pointer; }
+  .loading { text-align: center; padding: 60px 0; }
+  .loading-text { font-size: 16px; color: #888; margin-bottom: 8px; }
+  .loading-sub { font-size: 13px; color: #BBBBBB; }
+  .dots span { animation: dot 1.4s infinite; opacity: 0; }
+  .dots span:nth-child(2) { animation-delay: 0.2s; }
+  .dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dot { 0%,80%,100%{opacity:0} 40%{opacity:1} }
+  .result-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: #AAAAAA; margin-bottom: 16px; }
+  .result-name { font-size: 36px; font-weight: 500; margin-bottom: 8px; }
+  .result-meaning { font-size: 16px; color: #888; font-style: italic; margin-bottom: 32px; }
+  .result-text { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 40px; padding: 28px; background: #FFF; border: 1px solid #E8E6E1; border-radius: 12px; }
+  .result-text p { margin-bottom: 16px; }
+  .result-text p:last-child { margin-bottom: 0; }
+  .result-text .candle-name { font-style: italic; }
+  .notes-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #AAAAAA; margin-bottom: 12px; }
+  .notes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 40px; }
+  .note { font-size: 12px; padding: 4px 12px; border: 1px solid #E8E6E1; border-radius: 20px; color: #666; }
+  .capture { background: #F5F4F1; border-radius: 12px; padding: 28px; margin-bottom: 32px; }
+  .capture-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+  .capture-sub { font-size: 13px; color: #888; margin-bottom: 20px; line-height: 1.5; }
+  .email-row { display: flex; gap: 8px; }
+  .email-row input { flex: 1; padding: 12px 16px; border: 1px solid #E0DDD8; border-radius: 8px; font-size: 14px; background: #FFF; outline: none; }
+  .email-row input:focus { border-color: #1A1A1A; }
+  .btn-save { font-size: 14px; font-weight: 500; padding: 12px 20px; background: #1A1A1A; color: #FFF; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+  .saved-msg { font-size: 13px; color: #085041; margin-top: 10px; display: none; }
+  .btn-retake { font-size: 13px; color: #AAAAAA; background: none; border: none; cursor: pointer; text-decoration: underline; }
+  .mood-tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="brand">HOLISTIC LONDON</div>
+  <div class="progress"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+
+  <div id="s-intro" class="screen active">
+    <div class="intro-title">Find your scent identity.</div>
+    <div class="intro-sub">Seven questions about how you want to feel at home. No fragrance jargon. No wrong answers. In two minutes, we'll build your personal scent profile.</div>
+    <div class="intro-meta">
+      <span>7 questions</span>
+      <span>2 minutes</span>
+      <span>Personal result</span>
+    </div>
+    <button class="btn-start" onclick="startQuiz()">Begin</button>
+  </div>
+
+  <div id="s-quiz" class="screen">
+    <div class="q-num" id="q-num"></div>
+    <div class="q-text" id="q-text"></div>
+    <div class="q-sub" id="q-sub"></div>
+    <div class="options" id="options"></div>
+    <div class="nav">
+      <button class="btn-back" id="btn-back" onclick="goBack()">Back</button>
+      <button class="btn-next" id="btn-next" onclick="goNext()">Continue</button>
+    </div>
+  </div>
+
+  <div id="s-loading" class="screen">
+    <div class="loading">
+      <div class="loading-text">Reading your answers<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+      <div class="loading-sub">Building your personal scent identity</div>
+    </div>
+  </div>
+
+  <div id="s-result" class="screen">
+    <div class="result-label">YOUR SCENT IDENTITY</div>
+    <div class="result-name" id="r-name"></div>
+    <div class="result-meaning" id="r-meaning"></div>
+    <div class="mood-tag" id="r-tag"></div>
+    <div class="result-text" id="r-text"></div>
+    <div class="notes-label">YOUR SCENT NOTES</div>
+    <div class="notes" id="r-notes"></div>
+    <div class="capture">
+      <div class="capture-title">Save your scent profile</div>
+      <div class="capture-sub">We'll send it to you, plus let you know when we add new scents that match how you want to feel at home.</div>
+      <div class="email-row">
+        <input type="email" id="email-input" placeholder="your@email.com">
+        <button class="btn-save" onclick="saveProfile()">Save it</button>
+      </div>
+      <div class="saved-msg" id="saved-msg">Saved. Check your inbox.</div>
+    </div>
+    <button class="btn-retake" onclick="resetQuiz()">Retake the quiz</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  { id: 'sanctuary', text: "It's a rare evening entirely to yourself. What does your ideal home feel like?", sub: 'Trust your first instinct.',
+    options: [
+      { id: 'a', title: 'Still and quiet', sub: 'Dim light, no noise, just peace' },
+      { id: 'b', title: 'Warm and full', sub: 'Candles lit, something on low, the feeling of being held' },
+      { id: 'c', title: 'Clear and open', sub: 'Windows cracked, fresh air, space to breathe' },
+      { id: 'd', title: 'Rich and enveloping', sub: 'Deep colours, heavy textures, a sense of depth' }
+    ]
+  },
+  { id: 'time', text: 'When does your home feel most like yours?', sub: 'Pick the moment that resonates most.',
+    options: [
+      { id: 'a', title: 'Early morning, before anyone else is up', sub: 'That first quiet hour' },
+      { id: 'b', title: 'Sunday afternoon, slow and unhurried', sub: 'The day stretching out with nowhere to be' },
+      { id: 'c', title: 'Late evening, winding down', sub: 'The day dissolving, the body settling' },
+      { id: 'd', title: 'Whenever I get back through the door', sub: 'That exhale of arrival' }
+    ]
+  },
+  { id: 'nature', text: 'Which of these places makes you feel most at ease?', sub: 'This tells us something about your natural scent register.',
+    options: [
+      { id: 'a', title: 'A forest after rain', sub: 'Cool, green, earthy, alive' },
+      { id: 'b', title: 'A warm kitchen in winter', sub: 'Spice, wood smoke, something slow-cooked' },
+      { id: 'c', title: 'A clifftop on a clear day', sub: 'Salt air, wind, wide horizon' },
+      { id: 'd', title: 'A sunlit room with old books', sub: 'Dust, paper, amber light, time slowed down' }
+    ]
+  },
+  { id: 'need', text: 'Right now, what does your home most need to give you?', sub: 'Be honest. This is the most important question.',
+    options: [
+      { id: 'a', title: 'Rest', sub: 'I need to properly stop' },
+      { id: 'b', title: 'Focus', sub: 'I need clarity and a clear head' },
+      { id: 'c', title: 'Comfort', sub: 'I need warmth and to feel held' },
+      { id: 'd', title: 'Aliveness', sub: 'I need to feel present, not flat' }
+    ]
+  },
+  { id: 'word', text: 'If your home had a feeling — one word — what would you want it to be?', sub: "Don't overthink this.",
+    options: [
+      { id: 'a', title: 'Grounded', sub: '' },
+      { id: 'b', title: 'Luminous', sub: '' },
+      { id: 'c', title: 'Restored', sub: '' },
+      { id: 'd', title: 'Sanctuary', sub: '' }
+    ]
+  },
+  { id: 'season', text: 'Which season does your home feel best in?', sub: 'Where your home feels most natural tells us about your scent register.',
+    options: [
+      { id: 'a', title: 'Winter', sub: 'Close, deep, protective, hushed' },
+      { id: 'b', title: 'Autumn', sub: 'Rich, turning, golden, amber-lit' },
+      { id: 'c', title: 'Spring', sub: 'New, green, opening, fresh' },
+      { id: 'd', title: 'Summer', sub: 'Warm skin, long evenings, light and loose' }
+    ]
+  },
+  { id: 'ritual', text: 'When would you most naturally reach for a candle?', sub: "We'll use this to shape your home ritual.",
+    options: [
+      { id: 'a', title: 'Morning — to set the tone for the day', sub: '' },
+      { id: 'b', title: 'Midday — to mark a pause or shift', sub: '' },
+      { id: 'c', title: 'Evening — as the main event', sub: '' },
+      { id: 'd', title: 'Whenever I need to reset', sub: '' }
+    ]
+  }
+];
+
+const profiles = {
+  restore: {
+    name: 'The Restorative',
+    meaning: 'The deep breath you forgot you were holding.',
+    tag: 'Ground · Restore',
+    tagFill: '#E1F5EE', tagColor: '#085041',
+    notes: ['Vetiver', 'Amber', 'Cedarwood', 'Dark berries', 'Clove'],
+    primary: 'Ember', secondary: 'Settle'
+  },
+  clarity: {
+    name: 'The Clarifier',
+    meaning: 'A window. A breath. The room, and you, expanding.',
+    tag: 'Uplift · Presence',
+    tagFill: '#FAEEDA', tagColor: '#633806',
+    notes: ['Bergamot', 'Basil', 'Artemisia', 'Violet leaf', 'Green tea'],
+    primary: 'Open', secondary: 'Settle'
+  },
+  warmth: {
+    name: 'The Nester',
+    meaning: 'The warmth that stays after the flame has gone.',
+    tag: 'Ritual · Depth',
+    tagFill: '#FAECE7', tagColor: '#712B13',
+    notes: ['Frankincense', 'Dark rose', 'Sandalwood', 'Amber', 'Musky vanilla'],
+    primary: 'Vesper', secondary: 'Ember'
+  },
+  wild: {
+    name: 'The Wanderer',
+    meaning: 'The hour between the end of the day and the beginning of the night.',
+    tag: 'Aliveness · Presence',
+    tagFill: '#E6F1FB', tagColor: '#0C447C',
+    notes: ['Artemisia', 'Violet leaf', 'Bergamot', 'Oakmoss', 'Sea salt'],
+    primary: 'Open', secondary: 'Vesper'
+  }
+};
+
+const scoring = {
+  sanctuary: { a:'restore', b:'warmth', c:'clarity', d:'wild' },
+  time:      { a:'clarity', b:'warmth', c:'restore', d:'wild' },
+  nature:    { a:'wild',    b:'warmth', c:'wild',    d:'restore' },
+  need:      { a:'restore', b:'clarity', c:'warmth', d:'wild' },
+  word:      { a:'wild',    b:'clarity', c:'restore', d:'warmth' },
+  season:    { a:'restore', b:'warmth', c:'clarity', d:'wild' },
+  ritual:    { a:'clarity', b:'clarity', c:'restore', d:'wild' }
+};
+
+let answers = {}, currentQ = 0;
+
+function getProfile() {
+  const scores = { restore:0, clarity:0, warmth:0, wild:0 };
+  Object.entries(answers).forEach(([qid, aid]) => {
+    const p = scoring[qid]?.[aid];
+    if (p) scores[p]++;
+  });
+  return Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+}
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function startQuiz() { show('s-quiz'); renderQ(); }
+
+function renderQ() {
+  const q = questions[currentQ];
+  const total = questions.length;
+  document.getElementById('progress').style.width = ((currentQ / total) * 100) + '%';
+  document.getElementById('q-num').textContent = 'Question ' + (currentQ+1) + ' of ' + total;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-sub').textContent = q.sub;
+  document.getElementById('btn-back').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+  const sel = answers[q.id];
+  document.getElementById('btn-next').classList.toggle('enabled', !!sel);
+  document.getElementById('options').innerHTML = q.options.map(o =>
+    '<button class="opt ' + (sel === o.id ? 'selected' : '') + '" onclick="selectOpt(\'' + q.id + '\',\'' + o.id + '\')">' +
+    '<div class="opt-title">' + o.title + '</div>' +
+    (o.sub ? '<div class="opt-sub">' + o.sub + '</div>' : '') +
+    '</button>'
+  ).join('');
+}
+
+function selectOpt(qid, oid) { answers[qid] = oid; renderQ(); }
+
+function goNext() {
+  if (!answers[questions[currentQ].id]) return;
+  if (currentQ < questions.length - 1) { currentQ++; renderQ(); }
+  else generateResult();
+}
+
+function goBack() { if (currentQ > 0) { currentQ--; renderQ(); } }
+
+function cleanAndFormat(text) {
+  return text.split('\n\n')
+    .filter(p => p.trim().length > 0)
+    .map(p => '<p>' + p.trim() + '</p>')
+    .join('');
+}
+
+  const sentences = cleaned.split(/(?<=[.!?])\s+/);
+  const paragraphs = [];
+  let current = [];
+  sentences.forEach((s, i) => {
+    current.push(s);
+    if (current.length === 3 || i === sentences.length - 1) {
+      paragraphs.push('<p>' + current.join(' ') + '</p>');
+      current = [];
+    }
+  });
+  return paragraphs.join('');
+}
+
+async function generateResult() {
+  show('s-loading');
+  document.getElementById('progress').style.width = '100%';
+  const profileKey = getProfile();
+  const profile = profiles[profileKey];
+  const answerSummary = questions.reduce((acc, q) => {
+    const opt = q.options.find(o => o.id === answers[q.id]);
+    if (opt) acc[q.text] = opt.title;
+    return acc;
+  }, {});
+  try {
+    const response = await fetch('/api/result', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: answerSummary, profile: profile.name, primary: profile.primary, secondary: profile.secondary })
+    });
+    const data = await response.json();
+    showResult(profile, data.result);
+  } catch(e) {
+    showResult(profile, 'Your home wants to feel ' + profile.tag.toLowerCase() + '. ' + profile.primary + ' was made for exactly that.');
+  }
+}
+
+function showResult(profile, text) {
+  document.getElementById('r-name').textContent = profile.name;
+  document.getElementById('r-meaning').textContent = profile.meaning;
+  const tag = document.getElementById('r-tag');
+  tag.textContent = profile.tag;
+  tag.style.background = profile.tagFill;
+  tag.style.color = profile.tagColor;
+  document.getElementById('r-text').innerHTML =cleanAndFormat(text);
+  document.getElementById('r-notes').innerHTML = profile.notes.map(n => '<span class="note">' + n + '</span>').join('');
+  show('s-result');
+}
+
+async function saveProfile() {
+  const email = document.getElementById('email-input').value;
+  if (!email || !email.includes('@')) return;
+  const profileKey = getProfile();
+  await fetch('/api/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, profile: profiles[profileKey].name })
+  });
+  document.getElementById('saved-msg').style.display = 'block';
+}
+
+function resetQuiz() {
+  answers = {};
+  currentQ = 0;
+  show('s-intro');
+  document.getElementById('progress').style.width = '0%';
+}
+</script>
+</body>
+</html>
