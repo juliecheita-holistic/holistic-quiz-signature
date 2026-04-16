@@ -16,8 +16,6 @@
   .progress-label { position: absolute; right: 0; top: 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B5A8A4; }
   .screen { display: none; }
   .screen.active { display: block; }
-
-  /* Intro */
   .intro-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 12px; }
   .intro-title { font-size: clamp(26px, 6vw, 36px); font-weight: 500; line-height: 1.25; margin-bottom: 16px; color: #3D2B27; }
   .intro-title em { font-style: italic; }
@@ -28,37 +26,24 @@
   .step-text { font-size: 13px; color: #8C7B78; line-height: 1.5; }
   .step-text strong { color: #3D2B27; font-weight: 500; }
   .btn-start { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 36px; background: #3D2B27; color: #FAF8F5; border: none; border-radius: 8px; cursor: pointer; }
-
-  /* Part divider */
   .part-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 6px; }
   .part-title { font-size: 15px; font-weight: 500; color: #3D2B27; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 0.5px solid #E8E0DC; }
-
-  /* Questions */
   .q-num { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 10px; }
   .q-text { font-size: clamp(18px, 4vw, 22px); font-weight: 500; line-height: 1.4; margin-bottom: 8px; color: #3D2B27; }
   .q-sub { font-size: 13px; color: #8C7B78; margin-bottom: 24px; line-height: 1.5; }
-
-  /* Perfume input */
-  .perfume-input-wrap { margin-bottom: 12px; }
-  .perfume-input { width: 100%; padding: 14px 18px; border: 0.5px solid #E8E0DC; border-radius: 12px; font-size: 15px; background: #FAF8F5; outline: none; font-family: 'Poppins', sans-serif; color: #3D2B27; transition: border-color 0.15s; }
+  .perfume-input { width: 100%; padding: 14px 18px; border: 0.5px solid #E8E0DC; border-radius: 12px; font-size: 15px; background: #FAF8F5; outline: none; font-family: 'Poppins', sans-serif; color: #3D2B27; transition: border-color 0.15s; margin-bottom: 12px; }
   .perfume-input:focus { border-color: #3D2B27; }
   .perfume-skip { font-size: 12px; color: #B5A8A4; background: none; border: none; cursor: pointer; padding: 0; text-decoration: underline; }
-
-  /* Options */
   .options { display: flex; flex-direction: column; gap: 10px; }
   .opt { background: #FAF8F5; border: 0.5px solid #E8E0DC; border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: all 0.15s; text-align: left; width: 100%; }
   .opt:hover { border-color: #B5A8A4; background: #F5F0EC; }
   .opt.selected { border-color: #3D2B27; border-width: 1.5px; background: #F5F0EC; }
   .opt-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; color: #3D2B27; }
   .opt-sub { font-size: 12px; color: #8C7B78; line-height: 1.4; }
-
-  /* Nav */
   .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
   .btn-back { font-size: 13px; color: #B5A8A4; background: none; border: none; cursor: pointer; padding: 0; }
   .btn-next { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 28px; background: #3D2B27; color: #FAF8F5; border: none; border-radius: 8px; cursor: pointer; opacity: 0.25; transition: opacity 0.2s; }
   .btn-next.enabled { opacity: 1; }
-
-  /* Loading */
   .loading { text-align: center; padding: 60px 0; }
   .loading-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 16px; }
   .loading-text { font-size: 18px; font-weight: 500; color: #3D2B27; margin-bottom: 8px; }
@@ -67,14 +52,23 @@
   .dots span:nth-child(2) { animation-delay: 0.2s; }
   .dots span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes dot { 0%,80%,100%{opacity:0} 40%{opacity:1} }
-
-  /* Result */
+  .gate-wrap { text-align: center; padding: 20px 0; }
+  .gate-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 14px; }
+  .gate-title { font-size: clamp(22px, 5vw, 30px); font-weight: 500; color: #3D2B27; line-height: 1.35; margin-bottom: 12px; }
+  .gate-title em { font-style: italic; }
+  .gate-sub { font-size: 14px; color: #8C7B78; line-height: 1.65; margin-bottom: 28px; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .gate-input-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .gate-input-row input { flex: 1; padding: 13px 16px; border: 0.5px solid #E8E0DC; border-radius: 8px; font-size: 14px; background: #FAF8F5; outline: none; font-family: 'Poppins', sans-serif; color: #3D2B27; }
+  .gate-input-row input:focus { border-color: #3D2B27; }
+  .btn-gate { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; background: #3D2B27; color: #FAF8F5; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+  .gate-skip { font-size: 11px; color: #B5A8A4; background: none; border: none; cursor: pointer; text-decoration: underline; }
   .result-header { border-radius: 14px; padding: 32px 28px; margin-bottom: 24px; text-align: center; }
   .result-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8C7B78; margin-bottom: 10px; }
   .result-profile { font-size: 28px; font-weight: 500; color: #3D2B27; margin-bottom: 8px; }
   .result-meaning { font-size: 14px; color: #8C7B78; font-style: italic; line-height: 1.55; margin-bottom: 16px; }
   .result-mood { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; padding: 4px 14px; border-radius: 20px; }
-  .result-signature { background: #FAF8F5; border: 0.5px solid #E8E0DC; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .result-signature { display: block; text-decoration: none; background: #FAF8F5; border: 0.5px solid #E8E0DC; border-radius: 12px; padding: 24px; margin-bottom: 24px; transition: border-color 0.15s; }
+  .result-signature:hover { border-color: #B5A8A4; }
   .result-sig-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 8px; }
   .result-sig-name { font-size: 32px; font-weight: 500; color: #3D2B27; letter-spacing: -0.01em; margin-bottom: 4px; }
   .result-sig-sub { font-size: 13px; color: #8C7B78; font-style: italic; }
@@ -87,15 +81,23 @@
   .ritual-wrap { background: #F5F0EC; border-radius: 12px; padding: 20px 22px; margin-bottom: 28px; }
   .ritual-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B5A8A4; margin-bottom: 6px; }
   .ritual-text { font-size: 14px; color: #3D2B27; font-style: italic; line-height: 1.6; }
-  .capture { background: #F5F0EC; border-radius: 12px; padding: 28px; margin-bottom: 24px; }
-  .capture-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: #3D2B27; }
-  .capture-sub { font-size: 13px; color: #8C7B78; margin-bottom: 20px; line-height: 1.55; }
+  .candle-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .candle-card { display: block; text-decoration: none; border-radius: 12px; overflow: hidden; position: relative; aspect-ratio: 3/4; }
+  .candle-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .candle-card-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(0,0,0,0.62) 100%); }
+  .candle-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; }
+  .candle-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250,248,245,0.7); margin-bottom: 4px; }
+  .candle-card-name { font-size: 20px; font-weight: 500; color: #FAF8F5; line-height: 1; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .candle-card-mood { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .second-capture { background: #F5F0EC; border-radius: 12px; padding: 28px; margin-bottom: 24px; }
+  .second-capture-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: #3D2B27; }
+  .second-capture-sub { font-size: 13px; color: #8C7B78; margin-bottom: 20px; line-height: 1.55; }
   .email-row { display: flex; gap: 8px; }
   .email-row input { flex: 1; padding: 12px 16px; border: 0.5px solid #E8E0DC; border-radius: 8px; font-size: 13px; background: #FAF8F5; outline: none; font-family: 'Poppins', sans-serif; color: #3D2B27; }
   .email-row input:focus { border-color: #3D2B27; }
   .btn-save { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 20px; background: #3D2B27; color: #FAF8F5; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; }
   .saved-msg { font-size: 13px; color: #7A8F7E; margin-top: 10px; display: none; }
-  .btn-retake { font-size: 13px; color: #B5A8A4; background: none; border: none; cursor: pointer; text-decoration: underline; display: block; text-align: center; }
+  .btn-retake { font-size: 13px; color: #B5A8A4; background: none; border: none; cursor: pointer; text-decoration: underline; display: block; text-align: center; margin-bottom: 16px; }
   .quiz-footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 0.5px solid #E8E0DC; }
   .quiz-footer p { font-size: 12px; color: #B5A8A4; font-style: italic; }
 </style>
@@ -104,7 +106,9 @@
 <div class="container">
 
   <div class="logo-wrap">
-    <a href="https://thisisholisticlondon.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0014/8255/5492/files/Sephora_HL_Logo_800_x_800.png?v=1775313775" alt="Holistic London"></a>
+    <a href="https://thisisholisticlondon.com" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0014/8255/5492/files/Sephora_HL_Logo_800_x_800.png?v=1775313775" alt="Holistic London">
+    </a>
   </div>
 
   <div class="progress">
@@ -112,7 +116,6 @@
     <div class="progress-label" id="progress-label"></div>
   </div>
 
-  <!-- Intro -->
   <div id="s-intro" class="screen active">
     <div class="intro-eyebrow">Holistic London</div>
     <div class="intro-title">Your home, <em>your scent.</em></div>
@@ -134,7 +137,6 @@
     <button class="btn-start" onclick="startQuiz()">Begin</button>
   </div>
 
-  <!-- Quiz -->
   <div id="s-quiz" class="screen">
     <div class="part-label" id="part-label"></div>
     <div class="part-title" id="part-title"></div>
@@ -148,7 +150,6 @@
     </div>
   </div>
 
-  <!-- Loading -->
   <div id="s-loading" class="screen">
     <div class="loading">
       <div class="loading-eyebrow">Building your signature scent</div>
@@ -157,7 +158,19 @@
     </div>
   </div>
 
-  <!-- Result -->
+  <div id="s-gate" class="screen">
+    <div class="gate-wrap">
+      <div class="gate-eyebrow">Your result is ready</div>
+      <div class="gate-title">Your signature home scent<br><em>has been found.</em></div>
+      <div class="gate-sub">Leave your email to reveal it — we'll also send it to you so you never lose it, and let you know when new scents match your profile.</div>
+      <div class="gate-input-row">
+        <input type="email" id="gate-email" placeholder="your@email.com">
+        <button class="btn-gate" onclick="submitGate()">Reveal it</button>
+      </div>
+      <button class="gate-skip" onclick="skipGate()">skip this step</button>
+    </div>
+  </div>
+
   <div id="s-result" class="screen">
     <div class="result-header" id="r-header">
       <div class="result-eyebrow">Your signature home scent</div>
@@ -165,8 +178,8 @@
       <div class="result-meaning" id="r-meaning"></div>
       <span class="result-mood" id="r-tag"></span>
     </div>
-    <a class="result-signature" id="r-signature" href="#" target="_blank" style="display:block;text-decoration:none">
-      <div class="result-sig-label">Your candle — shop now</div>
+    <a class="result-signature" id="r-signature" href="#" target="_blank">
+      <div class="result-sig-label" id="r-sig-label"></div>
       <div class="result-sig-name" id="r-candle"></div>
       <div class="result-sig-sub" id="r-candle-sub"></div>
     </a>
@@ -177,12 +190,13 @@
       <div class="ritual-label">When to light it</div>
       <div class="ritual-text" id="r-ritual"></div>
     </div>
-    <div class="capture">
-      <div class="capture-title">Save your signature scent</div>
-      <div class="capture-sub">We'll send it to you and let you know when new scents match your profile.</div>
+    <div class="candle-cards" id="r-cards"></div>
+    <div id="second-capture" class="second-capture" style="display:none">
+      <div class="second-capture-title">Stay in your scent world</div>
+      <div class="second-capture-sub">Leave your email for scent recommendations that match your profile — and to be the first to know when new candles arrive that are made for you.</div>
       <div class="email-row">
         <input type="email" id="email-input" placeholder="your@email.com">
-        <button class="btn-save" onclick="saveProfile()">Save it</button>
+        <button class="btn-save" onclick="saveProfile()">Send it</button>
       </div>
       <div class="saved-msg" id="saved-msg">Saved. Check your inbox.</div>
     </div>
@@ -192,333 +206,128 @@
   <div class="quiz-footer"><p>Your home, your scent. Feel at home.</p></div>
 
 </div>
-
 <script>
 const questions = [
-  {
-    part: 1, partTitle: 'Your scent world',
-    id: 'perfume', type: 'text',
-    text: 'What perfume do you wear most often — or feel most like yourself in?',
-    sub: 'Any perfume, any brand. Or describe a scent you love. Skip if you prefer.',
-    placeholder: 'e.g. Chanel No.5, Le Labo Santal 33, something woody...'
-  },
-  {
-    part: 1, partTitle: 'Your scent world',
-    id: 'scentWorld',
-    text: 'Which of these scent worlds feels most like yours?',
-    sub: 'Not what you want your home to smell like — what already feels like you.',
-    options: [
-      { id: 'a', title: 'Warm and woody', sub: 'Sandalwood, amber, vetiver, something that glows' },
-      { id: 'b', title: 'Fresh and green', sub: 'Herbs, cut grass, clean air, the outdoors' },
-      { id: 'c', title: 'Dark and resinous', sub: 'Frankincense, oud, smoke, ancient and deep' },
-      { id: 'd', title: 'Soft and floral', sub: 'Rose, jasmine, peonies, warm skin' },
-      { id: 'e', title: 'Citrus and bright', sub: 'Bergamot, lemon, mandarin, clean and alive' },
-      { id: 'f', title: 'Earthy and grounding', sub: 'Patchouli, moss, damp soil, roots' }
-    ]
-  },
-  {
-    part: 1, partTitle: 'Your scent world',
-    id: 'scentMemory',
-    text: 'Think of a home that felt perfect to you. What did it smell like?',
-    sub: 'A place you visited, lived in, or imagined. The scent at its best.',
-    options: [
-      { id: 'a', title: 'Warm wood and amber', sub: 'A fireplace, old furniture, candlelight' },
-      { id: 'b', title: 'Fresh herbs and open air', sub: 'A garden nearby, clean rooms, light' },
-      { id: 'c', title: 'Dark berries and spice', sub: 'Something cooking, rich and layered' },
-      { id: 'd', title: 'Soft florals and skin', sub: 'A bathroom, warm towels, something intimate' },
-      { id: 'e', title: 'Clean linen and light', sub: 'Minimal, airy, nothing heavy' },
-      { id: 'f', title: 'Earth and rain', sub: 'Petrichor, forests, the ground after weather' }
-    ]
-  },
-  {
-    part: 2, partTitle: 'Your feeling at home',
-    id: 'need',
-    text: 'Right now, what does your home most need to give you?',
-    sub: 'Be honest. This is the most important question.',
-    options: [
-      { id: 'a', title: 'Rest', sub: 'I need to properly stop' },
-      { id: 'b', title: 'Focus', sub: 'I need clarity and a clear head' },
-      { id: 'c', title: 'Comfort', sub: 'I need warmth and to feel held' },
-      { id: 'd', title: 'Aliveness', sub: 'I need to feel present, not flat' },
-      { id: 'e', title: 'Ritual', sub: 'I need the day to feel intentional' },
-      { id: 'f', title: 'Release', sub: 'I need to let everything go' }
-    ]
-  },
-  {
-    part: 2, partTitle: 'Your feeling at home',
-    id: 'moment',
-    text: 'When does your home feel most like yours?',
-    sub: '',
-    options: [
-      { id: 'a', title: 'Early morning, before anyone else is up', sub: 'That first quiet hour' },
-      { id: 'b', title: 'Sunday afternoon, slow and unhurried', sub: 'Nowhere to be' },
-      { id: 'c', title: 'Late evening, winding down', sub: 'The day dissolving' },
-      { id: 'd', title: 'Whenever I get back through the door', sub: 'That exhale of arrival' }
-    ]
-  },
-  {
-    part: 2, partTitle: 'Your feeling at home',
-    id: 'feeling',
-    text: 'If your home had one feeling — what would you want it to be?',
-    sub: "Don't overthink this.",
-    options: [
-      { id: 'a', title: 'Grounded', sub: '' },
-      { id: 'b', title: 'Luminous', sub: '' },
-      { id: 'c', title: 'Restored', sub: '' },
-      { id: 'd', title: 'Sanctuary', sub: '' },
-      { id: 'e', title: 'Alive', sub: '' },
-      { id: 'f', title: 'Present', sub: '' }
-    ]
-  },
-  {
-    part: 2, partTitle: 'Your feeling at home',
-    id: 'ritual',
-    text: 'When would you most naturally reach for a candle?',
-    sub: '',
-    options: [
-      { id: 'a', title: 'Morning — to set the tone', sub: '' },
-      { id: 'b', title: 'Midday — to mark a pause', sub: '' },
-      { id: 'c', title: 'Evening — as the main event', sub: '' },
-      { id: 'd', title: 'Whenever I need to reset', sub: '' }
-    ]
-  }
+  { part:1, partTitle:'Your scent world', id:'perfume', type:'text', text:'What perfume do you wear most often — or feel most like yourself in?', sub:'Any perfume, any brand. Or describe a scent you love. Skip if you prefer.', placeholder:'e.g. Chanel No.5, Le Labo Santal 33, something woody...' },
+  { part:1, partTitle:'Your scent world', id:'scentWorld', text:'Which of these scent worlds feels most like yours?', sub:'Not what you want your home to smell like — what already feels like you.', options:[{id:'a',title:'Warm and woody',sub:'Sandalwood, amber, vetiver, something that glows'},{id:'b',title:'Fresh and green',sub:'Herbs, cut grass, clean air, the outdoors'},{id:'c',title:'Dark and resinous',sub:'Frankincense, oud, smoke, ancient and deep'},{id:'d',title:'Soft and floral',sub:'Rose, jasmine, peonies, warm skin'},{id:'e',title:'Citrus and bright',sub:'Bergamot, lemon, mandarin, clean and alive'},{id:'f',title:'Earthy and grounding',sub:'Patchouli, moss, damp soil, roots'}] },
+  { part:1, partTitle:'Your scent world', id:'scentMemory', text:'Think of a home that felt perfect to you. What did it smell like?', sub:'A place you visited, lived in, or imagined. The scent at its best.', options:[{id:'a',title:'Warm wood and amber',sub:'A fireplace, old furniture, candlelight'},{id:'b',title:'Fresh herbs and open air',sub:'A garden nearby, clean rooms, light'},{id:'c',title:'Dark berries and spice',sub:'Something cooking, rich and layered'},{id:'d',title:'Soft florals and skin',sub:'A bathroom, warm towels, something intimate'},{id:'e',title:'Clean linen and light',sub:'Minimal, airy, nothing heavy'},{id:'f',title:'Earth and rain',sub:'Petrichor, forests, the ground after weather'}] },
+  { part:2, partTitle:'Your feeling at home', id:'need', text:'Right now, what does your home most need to give you?', sub:'Be honest. This is the most important question.', options:[{id:'a',title:'Rest',sub:'I need to properly stop'},{id:'b',title:'Focus',sub:'I need clarity and a clear head'},{id:'c',title:'Comfort',sub:'I need warmth and to feel held'},{id:'d',title:'Aliveness',sub:'I need to feel present, not flat'},{id:'e',title:'Ritual',sub:'I need the day to feel intentional'},{id:'f',title:'Release',sub:'I need to let everything go'}] },
+  { part:2, partTitle:'Your feeling at home', id:'moment', text:'When does your home feel most like yours?', sub:'', options:[{id:'a',title:'Early morning, before anyone else is up',sub:'That first quiet hour'},{id:'b',title:'Sunday afternoon, slow and unhurried',sub:'Nowhere to be'},{id:'c',title:'Late evening, winding down',sub:'The day dissolving'},{id:'d',title:'Whenever I get back through the door',sub:'That exhale of arrival'}] },
+  { part:2, partTitle:'Your feeling at home', id:'feeling', text:'If your home had one feeling — what would you want it to be?', sub:"Don't overthink this.", options:[{id:'a',title:'Grounded',sub:''},{id:'b',title:'Luminous',sub:''},{id:'c',title:'Restored',sub:''},{id:'d',title:'Sanctuary',sub:''},{id:'e',title:'Alive',sub:''},{id:'f',title:'Present',sub:''}] },
+  { part:2, partTitle:'Your feeling at home', id:'ritual', text:'When would you most naturally reach for a candle?', sub:'', options:[{id:'a',title:'Morning — to set the tone',sub:''},{id:'b',title:'Midday — to mark a pause',sub:''},{id:'c',title:'Evening — as the main event',sub:''},{id:'d',title:'Whenever I need to reset',sub:''}] }
 ];
 
 const profiles = {
-  restore: {
-    name: 'The Restorative',
-    meaning: 'The deep breath you forgot you were holding.',
-    tag: 'Ground · Restore',
-    tagBg: '#F5EDE6', tagColor: '#C17B5A',
-    headerBg: '#F5EDE6',
-    candle: 'EMBER',
-    candleUrl: 'https://thisisholisticlondon.com/products/ember-scented-candle',
-    candleSub: 'Vetiver, dark berries and amber — made for the end of the day',
-    notes: ['Vetiver', 'Amber', 'Dark berries', 'Clove', 'Plum'],
-    ritual: 'The end of the working day. The hour the home finally quietens. Whenever the room — and you — needs to exhale.'
-  },
-  clarity: {
-    name: 'The Clarifier',
-    meaning: 'A window. A breath. The room, and you, expanding.',
-    tag: 'Uplift · Presence',
-    tagBg: '#F0F3E8', tagColor: '#8A9E6E',
-    headerBg: '#F0F3E8',
-    candle: 'OPEN',
-    candleUrl: 'https://thisisholisticlondon.com/products/open-scented-candle',
-    candleSub: 'Italian bergamot, basil and ylang ylang — made for mornings and fresh starts',
-    notes: ['Bergamot', 'Basil', 'Artemisia', 'Violet leaf', 'Ylang ylang'],
-    ritual: 'First thing in the morning. When the day needs a clear start. When the room — and you — need more air.'
-  },
-  warmth: {
-    name: 'The Nester',
-    meaning: 'The warmth that stays after the flame has gone.',
-    tag: 'Ritual · Depth',
-    tagBg: '#F2EAEA', tagColor: '#745855',
-    headerBg: '#F2EAEA',
-    candle: 'VESPER',
-    candleUrl: 'https://thisisholisticlondon.com/products/vesper-scented-candle',
-    candleSub: 'Dark rose, frankincense and sandalwood — made for evenings that deserve to feel significant',
-    notes: ['Frankincense', 'Dark rose', 'Sandalwood', 'Amber', 'Musky vanilla'],
-    ritual: 'Meditation. A dinner that matters. The evening you want to inhabit fully rather than pass through.'
-  },
-  wild: {
-    name: 'The Wanderer',
-    meaning: 'The hour between the end of the day and the beginning of the night.',
-    tag: 'Aliveness · Presence',
-    tagBg: '#EEF0EB', tagColor: '#7A8F7E',
-    headerBg: '#EEF0EB',
-    candle: 'OPEN',
-    candleUrl: 'https://thisisholisticlondon.com/products/open-scented-candle',
-    candleSub: 'Italian bergamot, basil and ylang ylang — wild, alive, the outside brought in',
-    notes: ['Bergamot', 'Artemisia', 'Violet leaf', 'Basil', 'Warm musk'],
-    ritual: 'Any time the room feels closed. The morning that needs to wake up before you do. Whenever you need the world to feel bigger.'
-  }
+  restore: { name:'The Restorative', meaning:'The deep breath you forgot you were holding.', tag:'Ground · Restore', tagBg:'#F5EDE6', tagColor:'#C17B5A', headerBg:'#F5EDE6', candle:'EMBER', candleUrl:'https://thisisholisticlondon.com/products/ember-scented-candle', candleSub:'Vetiver, dark berries and amber — made for the end of the day', secondaryCandle:'SETTLE', secondaryUrl:'https://thisisholisticlondon.com/products/settle-scented-candle', secondaryMood:'Balance · Restore', secondaryMoodBg:'#EEF0EB', secondaryMoodColor:'#7A8F7E', primaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overhead_flat_lay_of_dried_vetiver_grass_roots_fresh_bla_a05dbc17-20bf-44f8-864a-bc7bc4654351.png?v=1775389696', secondaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadSETTLE_flat_lay_of_fresh_clary_sage_leaves_dried_laven_1eef65b5-33b2-4d0a-8810-5e57aacfd141.png?v=1775409953', primaryMood:'Ground · Restore', primaryMoodBg:'#F5EDE6', primaryMoodColor:'#C17B5A', notes:['Vetiver','Amber','Dark berries','Clove','Plum'], ritual:'The end of the working day. The hour the home finally quietens. Whenever the room — and you — needs to exhale.' },
+  clarity: { name:'The Clarifier', meaning:'A window. A breath. The room, and you, expanding.', tag:'Uplift · Presence', tagBg:'#F0F3E8', tagColor:'#8A9E6E', headerBg:'#F0F3E8', candle:'OPEN', candleUrl:'https://thisisholisticlondon.com/products/open-scented-candle', candleSub:'Italian bergamot, basil and ylang ylang — made for mornings and fresh starts', secondaryCandle:'SETTLE', secondaryUrl:'https://thisisholisticlondon.com/products/settle-scented-candle', secondaryMood:'Balance · Restore', secondaryMoodBg:'#EEF0EB', secondaryMoodColor:'#7A8F7E', primaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadOPEN__flat_lay_of_fresh_bergamot_citrus_halved_show_d0931470-ba14-43ec-ac05-c5af8177f1b1_1.png?v=1775409947', secondaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadSETTLE_flat_lay_of_fresh_clary_sage_leaves_dried_laven_1eef65b5-33b2-4d0a-8810-5e57aacfd141.png?v=1775409953', primaryMood:'Uplift · Presence', primaryMoodBg:'#F0F3E8', primaryMoodColor:'#8A9E6E', notes:['Bergamot','Basil','Artemisia','Violet leaf','Ylang ylang'], ritual:'First thing in the morning. When the day needs a clear start. When the room — and you — need more air.' },
+  warmth: { name:'The Nester', meaning:'The warmth that stays after the flame has gone.', tag:'Ritual · Depth', tagBg:'#F2EAEA', tagColor:'#745855', headerBg:'#F2EAEA', candle:'VESPER', candleUrl:'https://thisisholisticlondon.com/products/vesper-scented-candle', candleSub:'Dark rose, frankincense and sandalwood — made for evenings that deserve to feel significant', secondaryCandle:'EMBER', secondaryUrl:'https://thisisholisticlondon.com/products/ember-scented-candle', secondaryMood:'Ground · Restore', secondaryMoodBg:'#F5EDE6', secondaryMoodColor:'#C17B5A', primaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadVESPER_flat_lay_on_dark_charcoal_linen_left_side_scatt_8c87429e-443f-48e0-898b-f2c465d8d9dd.png?v=1775409954', secondaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overhead_flat_lay_of_dried_vetiver_grass_roots_fresh_bla_a05dbc17-20bf-44f8-864a-bc7bc4654351.png?v=1775389696', primaryMood:'Ritual · Depth', primaryMoodBg:'#F2EAEA', primaryMoodColor:'#745855', notes:['Frankincense','Dark rose','Sandalwood','Amber','Musky vanilla'], ritual:'Meditation. A dinner that matters. The evening you want to inhabit fully rather than pass through.' },
+  wild: { name:'The Wanderer', meaning:'The hour between the end of the day and the beginning of the night.', tag:'Aliveness · Presence', tagBg:'#EEF0EB', tagColor:'#7A8F7E', headerBg:'#EEF0EB', candle:'OPEN', candleUrl:'https://thisisholisticlondon.com/products/open-scented-candle', candleSub:'Italian bergamot, basil and ylang ylang — wild, alive, the outside brought in', secondaryCandle:'VESPER', secondaryUrl:'https://thisisholisticlondon.com/products/vesper-scented-candle', secondaryMood:'Ritual · Depth', secondaryMoodBg:'#F2EAEA', secondaryMoodColor:'#745855', primaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadOPEN__flat_lay_of_fresh_bergamot_citrus_halved_show_d0931470-ba14-43ec-ac05-c5af8177f1b1_1.png?v=1775409947', secondaryImg:'https://cdn.shopify.com/s/files/1/0014/8255/5492/files/juli77_overheadVESPER_flat_lay_on_dark_charcoal_linen_left_side_scatt_8c87429e-443f-48e0-898b-f2c465d8d9dd.png?v=1775409954', primaryMood:'Uplift · Presence', primaryMoodBg:'#EEF0EB', primaryMoodColor:'#7A8F7E', notes:['Bergamot','Artemisia','Violet leaf','Basil','Warm musk'], ritual:'Any time the room feels closed. The morning that needs to wake up before you do. Whenever you need the world to feel bigger.' }
 };
 
-const scoring = {
-  scentWorld: { a:'restore', b:'wild', c:'warmth', d:'warmth', e:'clarity', f:'restore' },
-  scentMemory: { a:'restore', b:'clarity', c:'warmth', d:'warmth', e:'clarity', f:'wild' },
-  need: { a:'restore', b:'clarity', c:'warmth', d:'wild', e:'warmth', f:'restore' },
-  moment: { a:'clarity', b:'warmth', c:'restore', d:'wild' },
-  feeling: { a:'wild', b:'clarity', c:'restore', d:'warmth', e:'wild', f:'clarity' },
-  ritual: { a:'clarity', b:'clarity', c:'restore', d:'wild' }
-};
+const scoring = { scentWorld:{a:'restore',b:'wild',c:'warmth',d:'warmth',e:'clarity',f:'restore'}, scentMemory:{a:'restore',b:'clarity',c:'warmth',d:'warmth',e:'clarity',f:'wild'}, need:{a:'restore',b:'clarity',c:'warmth',d:'wild',e:'warmth',f:'restore'}, moment:{a:'clarity',b:'warmth',c:'restore',d:'wild'}, feeling:{a:'wild',b:'clarity',c:'restore',d:'warmth',e:'wild',f:'clarity'}, ritual:{a:'clarity',b:'clarity',c:'restore',d:'wild'} };
 
-let answers = {}, currentQ = 0, perfumeValue = '';
+let answers={}, currentQ=0, perfumeValue='', emailCaptured=false, pendingProfile=null, pendingText=null;
 
 function getProfile() {
-  const scores = { restore:0, clarity:0, warmth:0, wild:0 };
-  Object.entries(answers).forEach(([qid, aid]) => {
-    const p = scoring[qid]?.[aid];
-    if (p) scores[p]++;
-  });
-  return Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+  const scores={restore:0,clarity:0,warmth:0,wild:0};
+  Object.entries(answers).forEach(([qid,aid])=>{ const p=scoring[qid]?.[aid]; if(p) scores[p]++; });
+  return Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
 }
 
-function show(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+function show(id) { document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
 
 function startQuiz() { show('s-quiz'); renderQ(); }
 
 function renderQ() {
-  const q = questions[currentQ];
-  const total = questions.length;
-  const pct = Math.round((currentQ / total) * 100);
-  document.getElementById('progress').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = 'Part ' + q.part + ' of 2';
-  document.getElementById('part-label').textContent = 'Part ' + q.part;
-  document.getElementById('part-title').textContent = q.partTitle;
-  document.getElementById('q-num').textContent = 'Question ' + (currentQ + 1) + ' of ' + total;
-  document.getElementById('q-text').textContent = q.text;
-  document.getElementById('q-sub').textContent = q.sub || '';
-  document.getElementById('btn-back').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
-
-  const inputEl = document.getElementById('q-input');
-
-  if (q.type === 'text') {
-    const val = perfumeValue || '';
-    inputEl.innerHTML =
-      '<div class="perfume-input-wrap">' +
-      '<input class="perfume-input" id="perfume-field" type="text" placeholder="' + q.placeholder + '" value="' + val + '" oninput="onPerfumeInput(this.value)">' +
-      '</div>' +
-      '<button class="perfume-skip" onclick="skipPerfume()">Skip this question</button>';
+  const q=questions[currentQ], total=questions.length;
+  document.getElementById('progress').style.width=Math.round((currentQ/total)*100)+'%';
+  document.getElementById('progress-label').textContent='Part '+q.part+' of 2';
+  document.getElementById('part-label').textContent='Part '+q.part;
+  document.getElementById('part-title').textContent=q.partTitle;
+  document.getElementById('q-num').textContent='Question '+(currentQ+1)+' of '+total;
+  document.getElementById('q-text').textContent=q.text;
+  document.getElementById('q-sub').textContent=q.sub||'';
+  document.getElementById('btn-back').style.visibility=currentQ===0?'hidden':'visible';
+  const el=document.getElementById('q-input');
+  if(q.type==='text') {
+    el.innerHTML='<input class="perfume-input" id="perfume-field" type="text" placeholder="'+q.placeholder+'" value="'+(perfumeValue||'')+'" oninput="perfumeValue=this.value"><button class="perfume-skip" onclick="skipPerfume()">Skip this question</button>';
     document.getElementById('btn-next').classList.add('enabled');
   } else {
-    const sel = answers[q.id];
-    document.getElementById('btn-next').classList.toggle('enabled', !!sel);
-    inputEl.innerHTML = '<div class="options">' +
-      q.options.map(o =>
-        '<button class="opt ' + (sel === o.id ? 'selected' : '') + '" onclick="selectOpt(\'' + q.id + '\',\'' + o.id + '\')">' +
-        '<div class="opt-title">' + o.title + '</div>' +
-        (o.sub ? '<div class="opt-sub">' + o.sub + '</div>' : '') +
-        '</button>'
-      ).join('') +
-      '</div>';
+    const sel=answers[q.id];
+    document.getElementById('btn-next').classList.toggle('enabled',!!sel);
+    el.innerHTML='<div class="options">'+q.options.map(o=>'<button class="opt '+(sel===o.id?'selected':'')+'" onclick="selectOpt(\''+q.id+'\',\''+o.id+'\')"><div class="opt-title">'+o.title+'</div>'+(o.sub?'<div class="opt-sub">'+o.sub+'</div>':'')+'</button>').join('')+'</div>';
   }
 }
 
-function onPerfumeInput(val) {
-  perfumeValue = val;
-}
-
-function skipPerfume() {
-  perfumeValue = '';
-  goNext();
-}
-
-function selectOpt(qid, oid) {
-  answers[qid] = oid;
-  renderQ();
-}
+function skipPerfume() { perfumeValue=''; goNext(); }
+function selectOpt(qid,oid) { answers[qid]=oid; renderQ(); }
+function goBack() { if(currentQ>0){currentQ--;renderQ();} }
 
 function goNext() {
-  const q = questions[currentQ];
-  if (q.type !== 'text' && !answers[q.id]) return;
-  if (q.type === 'text') {
-    answers['perfume_skipped'] = perfumeValue ? 'no' : 'yes';
-  }
-  if (currentQ < questions.length - 1) {
-    currentQ++;
-    renderQ();
-  } else {
-    generateResult();
-  }
-}
-
-function goBack() {
-  if (currentQ > 0) { currentQ--; renderQ(); }
+  const q=questions[currentQ];
+  if(q.type!=='text'&&!answers[q.id]) return;
+  if(currentQ<questions.length-1){currentQ++;renderQ();}
+  else generateResult();
 }
 
 async function generateResult() {
   show('s-loading');
-  document.getElementById('progress').style.width = '100%';
-
-  const profileKey = getProfile();
-  const profile = profiles[profileKey];
-
-  const answerSummary = {};
-  questions.forEach(q => {
-    if (q.type !== 'text' && answers[q.id]) {
-      const opt = q.options.find(o => o.id === answers[q.id]);
-      if (opt) answerSummary[q.text] = opt.title;
-    }
-  });
-
-  const scentWorldOpt = questions.find(q => q.id === 'scentWorld');
-  const scentWorldAnswer = scentWorldOpt && answers['scentWorld']
-    ? scentWorldOpt.options.find(o => o.id === answers['scentWorld'])?.title
-    : '';
-
-  const scentMemOpt = questions.find(q => q.id === 'scentMemory');
-  const scentMemAnswer = scentMemOpt && answers['scentMemory']
-    ? scentMemOpt.options.find(o => o.id === answers['scentMemory'])?.title
-    : '';
-
+  document.getElementById('progress').style.width='100%';
+  const profileKey=getProfile(), profile=profiles[profileKey];
+  const answerSummary={};
+  questions.forEach(q=>{ if(q.type!=='text'&&answers[q.id]){const opt=q.options.find(o=>o.id===answers[q.id]); if(opt) answerSummary[q.text]=opt.title;} });
+  const sw=questions.find(q=>q.id==='scentWorld'), sm=questions.find(q=>q.id==='scentMemory');
+  const scentWorldAnswer=sw&&answers['scentWorld']?sw.options.find(o=>o.id===answers['scentWorld'])?.title:'';
+  const scentMemAnswer=sm&&answers['scentMemory']?sm.options.find(o=>o.id===answers['scentMemory'])?.title:'';
   try {
-    const response = await fetch('/api/result', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        answers: answerSummary,
-        profile: profile.name,
-        perfume: perfumeValue,
-        scentWorld: scentWorldAnswer,
-        scentMemory: scentMemAnswer
-      })
-    });
-    const data = await response.json();
-    showResult(profile, data.result);
+    const response=await fetch('/api/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({answers:answerSummary,profile:profile.name,perfume:perfumeValue,scentWorld:scentWorldAnswer,scentMemory:scentMemAnswer})});
+    const data=await response.json();
+    pendingProfile=profile; pendingText=data.result; show('s-gate');
   } catch(e) {
-    showResult(profile, 'Your home wants to feel ' + profile.tag.toLowerCase() + '.\n\n' + profile.candle + ' was made for exactly this feeling.');
+    pendingProfile=profile; pendingText='Your home wants to feel '+profile.tag.toLowerCase()+'.\n\n'+profile.candle+' was made for exactly this feeling.'; show('s-gate');
   }
 }
 
-function showResult(profile, text) {
-  const header = document.getElementById('r-header');
-  header.style.background = profile.headerBg;
-  document.getElementById('r-name').textContent = profile.name;
-  document.getElementById('r-meaning').textContent = profile.meaning;
-  const tag = document.getElementById('r-tag');
-  tag.textContent = profile.tag;
-  tag.style.background = profile.tagBg;
-  tag.style.color = profile.tagColor;
-  document.getElementById('r-signature').href = profile.candleUrl;
-  document.getElementById('r-candle').textContent = profile.candle;
-  document.getElementById('r-candle-sub').textContent = profile.candleSub;
-  document.getElementById('r-text').innerHTML = text.split('\n\n')
-    .filter(p => p.trim())
-    .map(p => '<p>' + p.trim() + '</p>')
-    .join('');
-  document.getElementById('r-notes').innerHTML = profile.notes
-    .map(n => '<span class="note">' + n + '</span>').join('');
-  document.getElementById('r-ritual').textContent = profile.ritual;
+async function submitGate() {
+  const email=document.getElementById('gate-email').value;
+  if(!email||!email.includes('@')) return;
+  emailCaptured=true;
+  await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,profile:pendingProfile.name,perfume:perfumeValue})});
+  showResult(pendingProfile,pendingText);
+}
+
+function skipGate() { emailCaptured=false; showResult(pendingProfile,pendingText); }
+
+function showResult(profile,text) {
+  document.getElementById('r-header').style.background=profile.headerBg;
+  document.getElementById('r-name').textContent=profile.name;
+  document.getElementById('r-meaning').textContent=profile.meaning;
+  const tag=document.getElementById('r-tag');
+  tag.textContent=profile.tag; tag.style.background=profile.tagBg; tag.style.color=profile.tagColor;
+  document.getElementById('r-signature').href=profile.candleUrl;
+  document.getElementById('r-sig-label').textContent='The perfect scent for '+profile.name.replace('The ','a ');
+  document.getElementById('r-candle').textContent=profile.candle;
+  document.getElementById('r-candle-sub').textContent=profile.candleSub;
+  document.getElementById('r-text').innerHTML=text.split('\n\n').filter(p=>p.trim()).map(p=>'<p>'+p.trim()+'</p>').join('');
+  document.getElementById('r-notes').innerHTML=profile.notes.map(n=>'<span class="note">'+n+'</span>').join('');
+  document.getElementById('r-ritual').textContent=profile.ritual;
+  document.getElementById('r-cards').innerHTML=
+    '<a href="'+profile.candleUrl+'" target="_blank" class="candle-card"><img src="'+profile.primaryImg+'" alt="'+profile.candle+'"><div class="candle-card-overlay"></div><div class="candle-card-content"><div class="candle-card-label">Your signature scent</div><div class="candle-card-name">Meet '+profile.candle+'</div><span class="candle-card-mood" style="background:'+profile.primaryMoodBg+';color:'+profile.primaryMoodColor+'">'+profile.primaryMood+'</span></div></a>'+
+    '<a href="'+profile.secondaryUrl+'" target="_blank" class="candle-card"><img src="'+profile.secondaryImg+'" alt="'+profile.secondaryCandle+'"><div class="candle-card-overlay"></div><div class="candle-card-content"><div class="candle-card-label">Also made for you</div><div class="candle-card-name">Meet '+profile.secondaryCandle+'</div><span class="candle-card-mood" style="background:'+profile.secondaryMoodBg+';color:'+profile.secondaryMoodColor+'">'+profile.secondaryMood+'</span></div></a>';
+  if(!emailCaptured) document.getElementById('second-capture').style.display='block';
   show('s-result');
 }
 
 async function saveProfile() {
-  const email = document.getElementById('email-input').value;
-  if (!email || !email.includes('@')) return;
-  const profileKey = getProfile();
-  await fetch('/api/subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      email,
-      profile: profiles[profileKey].name,
-      perfume: perfumeValue
-    })
-  });
-  document.getElementById('saved-msg').style.display = 'block';
+  const email=document.getElementById('email-input').value;
+  if(!email||!email.includes('@')) return;
+  await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,profile:pendingProfile.name,perfume:perfumeValue})});
+  document.getElementById('saved-msg').style.display='block';
 }
 
 function resetQuiz() {
-  answers = {};
-  currentQ = 0;
-  perfumeValue = '';
-  show('s-intro');
-  document.getElementById('progress').style.width = '0%';
+  answers={}; currentQ=0; perfumeValue=''; emailCaptured=false; pendingProfile=null; pendingText=null;
+  show('s-intro'); document.getElementById('progress').style.width='0%';
 }
 </script>
 </body>
