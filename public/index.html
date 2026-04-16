@@ -104,7 +104,7 @@
 <div class="container">
 
   <div class="logo-wrap">
-    <img src="https://cdn.shopify.com/s/files/1/0014/8255/5492/files/Sephora_HL_Logo_800_x_800.png?v=1775313775" alt="Holistic London">
+    <a href="https://thisisholisticlondon.com" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0014/8255/5492/files/Sephora_HL_Logo_800_x_800.png?v=1775313775" alt="Holistic London"></a>
   </div>
 
   <div class="progress">
@@ -165,11 +165,11 @@
       <div class="result-meaning" id="r-meaning"></div>
       <span class="result-mood" id="r-tag"></span>
     </div>
-    <div class="result-signature" id="r-signature">
-      <div class="result-sig-label">Your candle</div>
+    <a class="result-signature" id="r-signature" href="#" target="_blank" style="display:block;text-decoration:none">
+      <div class="result-sig-label">Your candle — shop now</div>
       <div class="result-sig-name" id="r-candle"></div>
       <div class="result-sig-sub" id="r-candle-sub"></div>
-    </div>
+    </a>
     <div class="result-text" id="r-text"></div>
     <div class="notes-label">Your scent notes</div>
     <div class="notes" id="r-notes"></div>
@@ -292,6 +292,7 @@ const profiles = {
     tagBg: '#F5EDE6', tagColor: '#C17B5A',
     headerBg: '#F5EDE6',
     candle: 'EMBER',
+    candleUrl: 'https://thisisholisticlondon.com/products/ember-scented-candle',
     candleSub: 'Vetiver, dark berries and amber — made for the end of the day',
     notes: ['Vetiver', 'Amber', 'Dark berries', 'Clove', 'Plum'],
     ritual: 'The end of the working day. The hour the home finally quietens. Whenever the room — and you — needs to exhale.'
@@ -303,6 +304,7 @@ const profiles = {
     tagBg: '#F0F3E8', tagColor: '#8A9E6E',
     headerBg: '#F0F3E8',
     candle: 'OPEN',
+    candleUrl: 'https://thisisholisticlondon.com/products/open-scented-candle',
     candleSub: 'Italian bergamot, basil and ylang ylang — made for mornings and fresh starts',
     notes: ['Bergamot', 'Basil', 'Artemisia', 'Violet leaf', 'Ylang ylang'],
     ritual: 'First thing in the morning. When the day needs a clear start. When the room — and you — need more air.'
@@ -314,6 +316,7 @@ const profiles = {
     tagBg: '#F2EAEA', tagColor: '#745855',
     headerBg: '#F2EAEA',
     candle: 'VESPER',
+    candleUrl: 'https://thisisholisticlondon.com/products/vesper-scented-candle',
     candleSub: 'Dark rose, frankincense and sandalwood — made for evenings that deserve to feel significant',
     notes: ['Frankincense', 'Dark rose', 'Sandalwood', 'Amber', 'Musky vanilla'],
     ritual: 'Meditation. A dinner that matters. The evening you want to inhabit fully rather than pass through.'
@@ -325,6 +328,7 @@ const profiles = {
     tagBg: '#EEF0EB', tagColor: '#7A8F7E',
     headerBg: '#EEF0EB',
     candle: 'OPEN',
+    candleUrl: 'https://thisisholisticlondon.com/products/open-scented-candle',
     candleSub: 'Italian bergamot, basil and ylang ylang — wild, alive, the outside brought in',
     notes: ['Bergamot', 'Artemisia', 'Violet leaf', 'Basil', 'Warm musk'],
     ritual: 'Any time the room feels closed. The morning that needs to wake up before you do. Whenever you need the world to feel bigger.'
@@ -480,6 +484,7 @@ function showResult(profile, text) {
   tag.textContent = profile.tag;
   tag.style.background = profile.tagBg;
   tag.style.color = profile.tagColor;
+  document.getElementById('r-signature').href = profile.candleUrl;
   document.getElementById('r-candle').textContent = profile.candle;
   document.getElementById('r-candle-sub').textContent = profile.candleSub;
   document.getElementById('r-text').innerHTML = text.split('\n\n')
